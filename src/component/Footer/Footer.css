@@ -1,0 +1,261 @@
+/* =====================================================
+   VIDSHOT FOOTER ANIMATIONS
+===================================================== */
+
+@keyframes footer-wave {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(30px, -20px, 0) rotate(4deg);
+  }
+}
+
+@keyframes footer-wave-reverse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(-30px, 20px, 0) rotate(-4deg);
+  }
+}
+
+
+@keyframes footer-light {
+  0% {
+    transform: translateX(-30%) rotate(25deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateX(180%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+
+@keyframes footer-light-slow {
+  0% {
+    transform: translateX(100%) rotate(25deg);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(-180%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+
+@keyframes footer-particle-1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translate(35px, -25px);
+    opacity: 1;
+  }
+}
+
+
+@keyframes footer-particle-2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translate(-25px, -40px);
+    opacity: 0.9;
+  }
+}
+
+
+@keyframes footer-particle-3 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translate(20px, 30px);
+    opacity: 0.8;
+  }
+}
+
+
+@keyframes footer-particle-4 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translate(-30px, 20px);
+    opacity: 1;
+  }
+}
+
+
+@keyframes footer-particle-5 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translate(25px, -35px);
+    opacity: 0.9;
+  }
+}
+
+
+@keyframes footer-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes footer-orbit-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+
+@keyframes footer-glass {
+  0%,
+  100% {
+    transform: translateY(0) rotate(12deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(18deg);
+  }
+}
+
+
+@keyframes footer-glass-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-12deg);
+  }
+
+  50% {
+    transform: translateY(15px) rotate(-5deg);
+  }
+}
+
+
+@keyframes footer-scan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+
+/* =====================================================
+   UTILITY CLASSES
+===================================================== */
+
+.animate-footer-wave {
+  animation: footer-wave 14s ease-in-out infinite;
+}
+
+.animate-footer-wave-reverse {
+  animation: footer-wave-reverse 17s ease-in-out infinite;
+}
+
+.animate-footer-light {
+  animation: footer-light 12s ease-in-out infinite;
+}
+
+.animate-footer-light-slow {
+  animation: footer-light-slow 18s ease-in-out infinite;
+}
+
+.animate-footer-particle-1 {
+  animation: footer-particle-1 6s ease-in-out infinite;
+}
+
+.animate-footer-particle-2 {
+  animation: footer-particle-2 8s ease-in-out infinite;
+}
+
+.animate-footer-particle-3 {
+  animation: footer-particle-3 7s ease-in-out infinite;
+}
+
+.animate-footer-particle-4 {
+  animation: footer-particle-4 9s ease-in-out infinite;
+}
+
+.animate-footer-particle-5 {
+  animation: footer-particle-5 11s ease-in-out infinite;
+}
+
+.animate-footer-orbit {
+  animation: footer-orbit 25s linear infinite;
+}
+
+.animate-footer-orbit-reverse {
+  animation: footer-orbit-reverse 32s linear infinite;
+}
+
+.animate-footer-glass {
+  animation: footer-glass 8s ease-in-out infinite;
+}
+
+.animate-footer-glass-reverse {
+  animation: footer-glass-reverse 10s ease-in-out infinite;
+}
+
+.animate-footer-scan {
+  animation: footer-scan 9s linear infinite;
+}

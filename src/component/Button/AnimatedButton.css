@@ -1,0 +1,30 @@
+@keyframes button-shine {
+  0% {
+    left: -80%;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  25% {
+    left: 140%;
+    opacity: 1;
+  }
+
+  30% {
+    left: 140%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 140%;
+    opacity: 0;
+  }
+}
+
+.animate-button-shine {
+  animation: button-shine 3.4s cubic-bezier(0.22, 1, 0.36, 1)
+    infinite;
+}

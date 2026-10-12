@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 const team = [
   {
@@ -98,15 +98,11 @@ export default function TestimonialCarousel() {
     NEXT
   */
 
-  const nextSlide = () => {
-    setCurrent((prev) => {
-      if (prev >= maxIndex) {
-        return 0;
-      }
-
-      return prev + 1;
-    });
-  };
+const nextSlide = useCallback(() => {
+  setCurrent((prevIndex) =>
+    prevIndex >= maxIndex ? 0 : prevIndex + 1
+  );
+}, [maxIndex]);
 
   /*
     PREVIOUS
@@ -126,15 +122,15 @@ export default function TestimonialCarousel() {
     AUTO SLIDE
   */
 
-  useEffect(() => {
-    if (isPaused) return;
+useEffect(() => {
+  if (isPaused) return;
 
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 2000);
+  const interval = setInterval(() => {
+    nextSlide();
+  }, 2000);
 
-    return () => clearInterval(interval);
-  }, [isPaused, maxIndex]);
+  return () => clearInterval(interval);
+}, [isPaused, nextSlide]);
 
   /*
     Calculate width of each card.

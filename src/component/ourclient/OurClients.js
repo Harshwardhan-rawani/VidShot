@@ -704,7 +704,6 @@ export default function OurClients() {
     3 → Client 4 + Client 1
   */
 
-  const maxIndex = clients.length - 1;
 
   /* =======================================================
      NEXT

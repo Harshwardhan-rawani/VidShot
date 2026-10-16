@@ -174,11 +174,11 @@ export default function OurVision() {
               className="
                 mt-5 max-w-4xl
                 text-5xl font-black
-                leading-[0.9] tracking-[-0.075em]
+                leading-[0.9] 
                 text-[#17122a]
-                sm:text-6xl
-                md:text-7xl
-                lg:text-[88px]
+                sm:text-4xl
+                md:text-5xl
+                lg:text-[60px]
               "
             >
               Turning

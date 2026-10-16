@@ -489,11 +489,11 @@ export default function Services() {
       text-5xl
       font-black
       leading-[0.95]
-      tracking-[-0.065em]
+      
       text-[#17122a]
-      sm:text-6xl
-      md:text-7xl
-      lg:text-[4.7rem]
+      sm:text-5xl
+      md:text-6xl
+      lg:text-[4rem]
     "
   >
     Creative Work{" "}

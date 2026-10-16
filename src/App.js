@@ -7,14 +7,16 @@ import Services from './Pages/Services/Services';
 import Work from './Pages/Work/Work';
 import Contact from './Pages/Contact/Contact';
 import Footer from './component/Footer/Footer';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app-shell">
         <Navbar />
-
+     
         <main className="route-content bg-white">
+             <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

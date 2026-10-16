@@ -1,10 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import {
   ChevronLeft,
   ChevronRight,
   ArrowUpRight,
+  Pause,
+  Play,
 } from "lucide-react";
 
 // SVG ICONS
@@ -663,12 +665,11 @@ export default function OurClients() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const [isPaused, setIsPaused] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const [direction, setDirection] = useState(1);
 
   const [isDragging, setIsDragging] = useState(false);
-
-  const touchStartX = useRef(null);
 
   /* =======================================================
      RESPONSIVE BREAKPOINT
@@ -747,11 +748,11 @@ export default function OurClients() {
   ======================================================= */
 
   useEffect(() => {
-    if (isPaused || isDragging) {
-      return;
+    if (!isPlaying || isPaused || isDragging || clients.length <= cardsPerView) {
+      return undefined;
     }
 
-    const interval = setInterval(() => {
+    const interval = window.setInterval(() => {
       setDirection(1);
 
       setActiveClient((current) => {
@@ -760,45 +761,9 @@ export default function OurClients() {
     }, 4500);
 
     return () => {
-      clearInterval(interval);
+      window.clearInterval(interval);
     };
-  }, [isPaused, isDragging]);
-
-  /* =======================================================
-     TOUCH / SWIPE
-  ======================================================= */
-
-  const handleTouchStart = (event) => {
-    touchStartX.current = event.touches[0].clientX;
-
-    setIsDragging(true);
-  };
-
-  const handleTouchEnd = (event) => {
-    if (touchStartX.current === null) {
-      setIsDragging(false);
-      return;
-    }
-
-    const touchEndX = event.changedTouches[0].clientX;
-
-    const difference =
-      touchStartX.current - touchEndX;
-
-    const threshold = 50;
-
-    if (Math.abs(difference) > threshold) {
-      if (difference > 0) {
-        nextClient();
-      } else {
-        previousClient();
-      }
-    }
-
-    touchStartX.current = null;
-
-    setIsDragging(false);
-  };
+  }, [isPlaying, isPaused, isDragging, cardsPerView]);
 
   /* =======================================================
      DRAG
@@ -1018,10 +983,10 @@ export default function OurClients() {
                 text-4xl
                 font-black
                 leading-[0.95]
-                tracking-[-0.065em]
-                text-[#101418]
-                sm:text-5xl
-                lg:text-7xl
+                text-[clamp(2rem,5vw,3rem)]
+                text-[var(--dark)]
+                sm:text-4xl
+                lg:text-5xl
               "
             >
               Brands We
@@ -1092,8 +1057,9 @@ export default function OurClients() {
               className="relative"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Client portfolio carousel"
             >
               {/* =================================================
                   VIEWPORT
@@ -1101,10 +1067,8 @@ export default function OurClients() {
 
               <div className="overflow-hidden px-1 py-2">
                 <motion.div
-                  className="
-                    flex
-                    touch-pan-y
-                  "
+                  className="flex touch-pan-y"
+                  style={{ touchAction: "pan-y" }}
                   animate={{
                     x: 0,
                   }}
@@ -1191,11 +1155,12 @@ export default function OurClients() {
 
               <div
                 className="
-                  mt-6
+                  mt-5
                   flex
+                  flex-wrap
                   items-center
                   justify-between
-                  gap-5
+                  gap-4
                   sm:mt-7
                 "
               >
@@ -1273,7 +1238,27 @@ export default function OurClients() {
 
                 {/* Navigation */}
 
-                <div className="flex shrink-0 gap-2">
+                <div className="flex shrink-0 items-center gap-2">
+                  {/* Autoplay toggle */}
+
+                  <motion.button
+                    type="button"
+                    onClick={() => setIsPlaying((playing) => !playing)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.94 }}
+                    aria-label={isPlaying ? "Pause autoplay" : "Start autoplay"}
+                    title={isPlaying ? "Pause autoplay" : "Start autoplay"}
+                    className="
+                      flex h-10 w-10 items-center justify-center
+                      rounded-full border border-slate-200 bg-white
+                      text-[#17122a] shadow-sm transition-colors duration-300
+                      hover:border-[var(--primary-dark)] hover:text-[var(--primary-dark)]
+                      sm:h-12 sm:w-12
+                    "
+                  >
+                    {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+                  </motion.button>
+
                   {/* Previous */}
 
                   <motion.button
@@ -1352,22 +1337,26 @@ export default function OurClients() {
                   AUTO PLAY INDICATOR
               ================================================== */}
 
-              <div className="mt-4 flex items-center gap-2">
+              <div className="mt-4 flex items-center gap-2" aria-live="polite">
                 <span
                   className={`
                     h-1.5
                     w-1.5
                     rounded-full
                     ${
-                      isPaused
+                      !isPlaying
                         ? "bg-slate-300"
+                        : isPaused || isDragging
+                        ? "bg-amber-400"
                         : "bg-[#F8CC10]"
                     }
                   `}
                 />
 
                 <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-slate-400">
-                  {isPaused
+                  {!isPlaying
+                    ? "Autoplay stopped"
+                    : isPaused || isDragging
                     ? "Paused"
                     : "Auto playing"}
                 </span>

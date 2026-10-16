@@ -1089,15 +1089,7 @@ export default function ServicesShowcase() {
             ease: "easeInOut",
           }}
           className="
-            absolute
-            -left-48
-            top-20
-            h-[450px]
-            w-[450px]
-            rounded-full
-            bg-[#5428B0]/[0.055]
-            blur-3xl
-          "
+            absolute -left-48 top-20 h-[450px] w-[450px] rounded-full bg-[#5428B0]/[0.055] blur-3xl"
         />
 
         {/* Yellow glow */}
@@ -1150,17 +1142,8 @@ export default function ServicesShowcase() {
             ease: "linear",
           }}
           className="
-            absolute
-            -right-20
-            top-16
-            hidden
-            h-64
-            w-64
-            rounded-full
-            border
-            border-[#5428B0]/10
-            lg:block
-          "
+            absolute -right-20 top-16 hidden h-64 w-64 rounded-full border border-[#5428B0]/10 lg:block
+          " 
         >
           <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-[#F8CC10]" />
         </motion.div>
@@ -1244,12 +1227,12 @@ export default function ServicesShowcase() {
       text-5xl
       font-black
       leading-[0.95]
-      tracking-[-0.065em]
+ 
       text-[#17122a]
 
-      sm:text-6xl
-      md:text-7xl
-      lg:text-[4.7rem]
+      sm:text-5xl
+      md:text-6xl
+      lg:text-[4rem]
     "
   >
     Your Brand{" "}

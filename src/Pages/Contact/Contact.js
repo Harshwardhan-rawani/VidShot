@@ -152,11 +152,11 @@ export default function Contact() {
               text-5xl
               font-black
               leading-[0.95]
-              tracking-[-0.065em]
+         
               text-[#17122a]
-              sm:text-6xl
-              md:text-7xl
-              lg:text-[4.7rem]
+              sm:text-5xl
+              md:text-6xl
+              lg:text-[4rem]
             "
           >
             Let's Build Something
@@ -722,41 +722,7 @@ export default function Contact() {
 
               <div className="grid gap-5 sm:grid-cols-2">
 
-                <label className="block">
-
-                  <span className="text-xs font-bold text-[#17122a]">
-                    Company
-                  </span>
-
-                  <input
-                    type="text"
-                    placeholder="Brand or company"
-                    className="
-                      mt-2
-                      w-full
-                      rounded-xl
-                      border
-                      border-[#17122a]/10
-                      bg-[#F8F8F7]
-                      px-4
-                      py-3.5
-                      text-sm
-                      text-[#17122a]
-                      outline-none
-
-                      placeholder:text-[#71697e]/60
-
-                      transition-all
-                      duration-300
-
-                      focus:border-[#5428B0]
-                      focus:bg-white
-                      focus:ring-4
-                      focus:ring-[#5428B0]/[0.06]
-                    "
-                  />
-
-                </label>
+             
 
                 <label className="block">
 

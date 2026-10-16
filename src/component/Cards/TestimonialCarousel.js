@@ -226,10 +226,10 @@ useEffect(() => {
                 text-4xl
                 font-black
                 leading-[0.95]
-                tracking-[-0.065em]
-                text-[#101418]
-                sm:text-5xl
-                lg:text-7xl
+               
+                text-[var(--dark)]
+                sm:text-4xl
+                lg:text-5xl
               "
             >
               Creative Minds

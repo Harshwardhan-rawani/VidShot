@@ -28,7 +28,7 @@ export default function TrustedClients({
 
     text-xs
     font-medium
-    text-white/70
+    text-black
 
     shadow-[0_10px_40px_rgba(0,0,0,0.12)]
 
@@ -114,7 +114,7 @@ export default function TrustedClients({
       font-semibold
       uppercase
       tracking-[0.12em]
-      text-white/65
+      text-black
     "
   >
     Trusted By

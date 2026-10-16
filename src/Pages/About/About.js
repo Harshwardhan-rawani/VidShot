@@ -159,11 +159,10 @@ export default function About() {
                   text-5xl
                   font-black
                   leading-[0.9]
-                  tracking-[-0.07em]
 
-                  sm:text-6xl
-                  md:text-7xl
-                  lg:text-[4.7rem]
+                  sm:text-5xl
+                  md:text-6xl
+                  lg:text-[4rem]
                 "
               >
                 We make brands

@@ -5,8 +5,8 @@ import {
   Smartphone,
   Palette,
   Megaphone,
-  Camera,
   ArrowUpRight,
+  Sparkles,
 } from "lucide-react";
 
 /* =========================================================
@@ -17,8 +17,8 @@ const services = [
   {
     id: 1,
     number: "01",
-    title: "Video Production",
-    shortTitle: "Video",
+    title: "Video Editing",
+    shortTitle: "Video Editing",
     description:
       "From brand films to cinematic campaigns, we create videos that tell your story and make people stop scrolling.",
     tags: [
@@ -86,23 +86,23 @@ const services = [
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200",
   },
 
-  {
-    id: 5,
-    number: "05",
-    title: "Event Coverage",
-    shortTitle: "Events",
-    description:
-      "Capture the energy, people and moments of your events with premium photography and cinematic video.",
-    tags: [
-      "Event Films",
-      "Photography",
-      "After Movies",
-      "Live Content",
-    ],
-    icon: Camera,
-    image:
-      "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1200",
-  },
+{
+  id: 5,
+  number: "05",
+  title: "AI Ads",
+  shortTitle: "AI Ads",
+  description:
+    "Create high-impact, AI-powered advertisements with stunning visuals, cinematic storytelling, and intelligent automation to boost engagement and drive conversions.",
+  tags: [
+    "AI Video Ads",
+    "AI Avatars",
+    "Product Visuals",
+    "Ad Creatives",
+  ],
+  icon: Sparkles,
+  image:
+    "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200",
+},
 ];
 
 /* =========================================================
@@ -814,10 +814,10 @@ export default function ServicesSection() {
                 text-3xl
                 font-black
                 leading-[0.95]
-                tracking-[-0.065em]
                 text-[#101418]
                 sm:text-5xl
-                lg:text-7xl
+                lg:text-5xl
+              
               ">
               Creative services
               <br />
@@ -836,7 +836,7 @@ export default function ServicesSection() {
               max-w-sm
               text-sm
               leading-6
-              text-slate-500
+              text-[var(--dark)]
               md:text-base
             "
           >
@@ -863,7 +863,7 @@ export default function ServicesSection() {
             rounded-[32px]
             border
             border-slate-200
-            bg-white
+            bg-[var(--neutral)]
             p-2
             shadow-[0_25px_80px_rgba(15,23,42,0.07)]
             lg:flex

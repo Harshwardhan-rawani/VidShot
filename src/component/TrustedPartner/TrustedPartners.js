@@ -85,14 +85,14 @@ export default function TrustedPartners() {
             rounded-full
             bg-[#f7f7f9]
             px-7
-            py-3
+            py-2
             text-sm
             font-medium
             text-[#171717]
             shadow-sm
           "
         >
-          Trusted Partners Worldwide for Success
+          Trusted Partners
         </div>
 
         <div className="h-px flex-1 bg-[#d8d8d8]" />
@@ -100,7 +100,7 @@ export default function TrustedPartners() {
       </div>
 
       {/* Marquee */}
-      <div className="relative z-10 mt-10 ">
+      <div className="relative z-10 mt-5 ">
 
         <Marquee
         className="overflow-hidden"

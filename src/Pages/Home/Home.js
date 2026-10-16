@@ -1,5 +1,5 @@
 
-import StackedCards from '../../component/Cards/StackedCards';
+
 import FeedbackMarquee from '../../component/Cards/FeedbackMarquee';
 import TrustedPartners from '../../component/TrustedPartner/TrustedPartners';
 import ServicesSection from '../../component/Cards/ServicesSection';
@@ -22,261 +22,244 @@ const metrics = [
 
 
 
+
 export default function Home() {
   return (
     <div className="mx-auto max-w-9xl bg-white px-4 py-8 sm:px-6 lg:px-8 mt-20">
      
-      <section className="relative min-h-[400px] overflow-hidden rounded-[40px]">
-  {/* =========================================
-      BACKGROUND VIDEO
-  ========================================= */}
 
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="
-      absolute
-      inset-0
-      h-full
-      w-full
-      object-cover
-    "
-  >
-    <source src="/vidshot.mp4" type="video/mp4" />
-  </video>
-
-  {/* =========================================
-      VIDEO DARK / PURPLE OVERLAY
-  ========================================= */}
-
+<section className="relative overflow-hidden rounded-[32px] bg-white">
   <div
     className="
-      absolute
-      inset-0
-      bg-white/10
-    "
-  />
-
-  {/* =========================================
-      GRADIENT OVERLAY
-  ========================================= */}
-
-  <div
-    className="
-      absolute
-      inset-0
-      bg-gradient-to-br
-      from-white/10
-      via-[#351477]/10
-      to-[#351477]/10
-    "
-  />
-    
-
-  {/* =========================================
-      SUBTLE VIDEO VIGNETTE
-  ========================================= */}
-
-  <div
-    className="
-      absolute
-      inset-0
-      bg-[radial-gradient(circle_at_center,transparent_15%,rgba(20,10,45,0.55)_100%)]
-    "
-  />
-
-  {/* =========================================
-      GLASS CONTENT CONTAINER
-  ========================================= */}
-
-  <div
-    className="
-     bg-
-      relative
-      z-10
-      grid
-      min-h-[700px]
+      relative z-10
+      grid min-h-[560px]
       items-center
       gap-10
-      p-5
-      sm:p-8
+      px-5 py-14
+      sm:px-10 sm:py-16
       lg:grid-cols-[1.1fr_0.9fr]
-      lg:p-8
-     
+      lg:gap-8
+      lg:px-14 lg:py-20
+      xl:px-20
     "
   >
-    {/* =========================================
-        LEFT GLASS PANEL
-    ========================================= */}
+    {/* LEFT CONTENT */}
+    <div className="relative z-10 max-w-2xl">
 
-    <div
-      className="
-      
-        relative
-        overflow-hidden
-        p-7
-        sm:p-9
-        lg:p-8
-      "
-    >
-      {/* Glass highlight */}
-
+      {/* Badge */}
       <div
         className="
-          pointer-events-none
-          absolute
-          inset-x-0
-          top-0
-          h-px
-        "
-      />
-
-      {/* =====================================
-          BADGE
-      ===================================== */}
-
-      <div
-        className="
-          mb-6
-          inline-flex
-          items-center
-          gap-3
-          rounded-full
-          border
-          border-white/20
-          bg-white/10
-          px-4
-          py-2
-          text-xs
-          font-semibold
-          uppercase
-          tracking-[0.2em]
-          text-white
-          
+          mb-7 inline-flex items-center gap-2.5
+          rounded-full border border-gray-200
+          bg-gray-50 px-4 py-2
+          text-xs font-semibold uppercase
+          tracking-[0.16em] text-gray-700
         "
       >
-        <span
-          className="
-            h-2.5
-            w-2.5
-            animate-pulse
-            rounded-full
-            bg-[#F8CC10]
-            shadow-[0_0_15px_rgba(248,204,16,0.8)]
-          "
-        />
-
-        Creative motion studio
+        <span className="h-2 w-2 rounded-full bg-[#F8CC10]" />
+        Creative Motion Studio
       </div>
 
-      {/* =====================================
-          HEADING
-      ===================================== */}
-
+      {/* Heading */}
       <h1
         className="
-          max-w-3xl
-          text-4xl
-          font-black
-          leading-[0.95]
-          tracking-[-0.07em]
-          text-black
+          text-4xl font-extrabold
+          leading-[1.08] tracking-[-0.045em]
+          text-gray-950
           sm:text-5xl
-          lg:text-7xl
+          md:text-6xl
+          xl:text-7xl
         "
       >
         We turn ideas into{" "}
-        <span className="text-[#F8CC10]">
-          cinematic stories
+        <span className="relative inline-block">
+          <span className="relative z-10">
+            cinematic stories
+          </span>
+
+          {/* Yellow underline */}
+          <span
+            className="
+              absolute bottom-1 left-0 -z-0
+              h-2 w-full rounded-full
+              bg-[#F8CC10]/60
+              sm:h-3
+            "
+          />
         </span>{" "}
         that move people.
       </h1>
 
-      {/* =====================================
-          DESCRIPTION
-      ===================================== */}
-
+      {/* Description
       <p
         className="
-          mt-6
-          max-w-xl
-          text-base
-          leading-7
-          text-white/75
-          sm:text-lg
+          mt-6 max-w-lg
+          text-base leading-7
+          text-gray-500
+          sm:text-lg sm:leading-8
         "
       >
-        VidShot helps ambitious brands, founders, and creators
-        build standout video experiences that look premium, feel
-        authentic, and perform across every channel.
-      </p>
+        We help ambitious brands stand out through
+        creative storytelling, premium video production,
+        and performance-driven digital experiences.
+      </p> */}
 
-      {/* =====================================
-          BUTTONS
-      ===================================== */}
-  <TrustedClients/>
+      {/* Client Trust */}
+      <div className="mt-8">
+        <TrustedClients />
+      </div>
 
-      <div className="mt-8 flex flex-wrap items-center gap-4">
-
-        {/* Primary */}
-      
-
+      {/* Buttons */}
+      <div className="mt-9 flex flex-wrap items-center gap-4">
         <AnimatedButton
           text="Book a discovery call"
           to="/contact"
         />
 
-        {/* Secondary */}
-
-      <AnimatedButton1
-          text="View our work"
+        <AnimatedButton1
+          text="Explore our work"
           to="/work"
         />
       </div>
 
- 
-    </div>
-
-    {/* =========================================
-        RIGHT GLASS CARD AREA
-    ========================================= */}
-
-    <div
-      className="
-        relative
-        flex
-        items-center
-        justify-center
-        p-2
-      "
-    >
-      {/* Glow */}
-
+      {/* Bottom trust indicator */}
       <div
         className="
-          pointer-events-none
-          absolute
-          inset-10
-          rounded-full
-          bg-[#F8CC10]/10
-          blur-3xl
+          mt-10 flex flex-wrap items-center
+          gap-x-6 gap-y-3
+          border-t border-gray-100
+          pt-6
+          text-sm text-gray-500
+        "
+      >
+        <span className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#F8CC10]" />
+          Creative Excellence
+        </span>
+
+        <span className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#F8CC10]" />
+          Strategic Storytelling
+        </span>
+      </div>
+    </div>
+
+    {/* RIGHT VISUAL */}
+    <div className="relative mx-auto w-full max-w-[500px]">
+
+      {/* Subtle background decoration */}
+      <div
+        className="
+          absolute -right-4 -top-4
+          h-28 w-28 rounded-full
+          bg-[#F8CC10]/20 blur-2xl
         "
       />
 
-      <div className="relative w-full max-w-[500px]">
-        <StackedCards />
+      <div
+        className="
+          absolute -bottom-5 -left-5
+          h-32 w-32 rounded-full
+          bg-purple-100/70 blur-2xl
+        "
+      />
+
+      {/* Main image */}
+      <div
+        className="
+          group relative overflow-hidden
+          rounded-[28px]
+          border border-gray-100
+          bg-gray-50
+          shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+        "
+      >
+        <img
+          src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=1200&q=85"
+          alt="Professional video production and cinematic storytelling"
+          className="
+            aspect-[4/5] w-full object-cover
+            transition-transform duration-700
+            group-hover:scale-105
+            sm:aspect-[5/4]
+            lg:aspect-[4/5]
+          "
+        />
+
+        {/* Soft image overlay */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-t
+            from-black/65 via-transparent to-transparent
+          "
+        />
+
+        {/* Image content */}
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+          <span
+            className="
+              inline-flex rounded-full
+              bg-[#F8CC10] px-3 py-1.5
+              text-[10px] font-bold
+              uppercase tracking-[0.15em]
+              text-black
+            "
+          >
+            From vision to reality
+          </span>
+
+          <h2
+            className="
+              mt-4 max-w-xs
+              text-2xl font-bold
+              leading-tight text-white
+              sm:text-3xl
+            "
+          >
+            Stories worth watching.
+            <br />
+            Brands worth remembering.
+          </h2>
+        </div>
+      </div>
+
+      {/* Floating label */}
+      <div
+        className="
+          absolute -left-3 top-8
+          rounded-2xl border border-gray-100
+          bg-white px-4 py-3
+          shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+          sm:-left-8 sm:px-5 sm:py-4
+        "
+      >
+        <p className="text-xs font-medium text-gray-400">
+          Our approach
+        </p>
+
+        <p className="mt-1 text-sm font-bold text-gray-900 sm:text-base">
+          Creative meets strategy.
+        </p>
+      </div>
+
+      {/* Floating accent */}
+      <div
+        className="
+          absolute -bottom-4 right-5
+          flex h-14 w-14 items-center justify-center
+          rounded-2xl bg-[#F8CC10]
+          text-xl font-black text-black
+          shadow-lg shadow-yellow-500/10
+          sm:h-16 sm:w-16
+        "
+      >
+        VS.
       </div>
     </div>
   </div>
-
-  {/* =========================================
-      BOTTOM GLASS BAR
-  ========================================= */}
-
-
 </section>
+
   
       <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {metrics.map((item) => (
